@@ -1,0 +1,249 @@
+:root {
+  color-scheme: light;
+  --bg: #f6efe6;
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-strong: rgba(255, 255, 255, 0.94);
+  --border: rgba(17, 24, 39, 0.08);
+  --text: #152033;
+  --muted: #5f6c82;
+  --accent: #ff6f3c;
+  --accent-strong: #d94d1a;
+  --accent-soft: rgba(255, 111, 60, 0.12);
+  --shadow: 0 24px 64px rgba(21, 32, 51, 0.12);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --max-width: 960px;
+  font-family:
+    "SF Pro Display",
+    "SF Pro Text",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(255, 214, 10, 0.34), transparent 28%),
+    radial-gradient(circle at 10% 20%, rgba(255, 59, 48, 0.18), transparent 22%),
+    linear-gradient(180deg, #fffaf3 0%, var(--bg) 100%);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent-strong);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.page-shell {
+  width: min(calc(100% - 32px), var(--max-width));
+  margin: 0 auto;
+  padding: 24px 0 56px;
+}
+
+.top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.brand {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-pill,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 12px 28px rgba(21, 32, 51, 0.06);
+  backdrop-filter: blur(18px);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, var(--accent) 0%, #ff8d5e 100%);
+  color: #fff;
+  border-color: transparent;
+}
+
+.hero,
+.card {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.hero {
+  padding: 32px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+h1 {
+  margin-top: 16px;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+}
+
+h2 {
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+.hero p,
+.card p,
+.card li {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.lede {
+  max-width: 760px;
+  margin: 16px 0 0;
+  font-size: 1.1rem;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.grid.two-up {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  padding: 24px;
+}
+
+.card ul {
+  margin: 16px 0 0;
+  padding-left: 20px;
+}
+
+.card li + li {
+  margin-top: 8px;
+}
+
+.section {
+  margin-top: 22px;
+}
+
+.section + .section {
+  margin-top: 18px;
+}
+
+.meta-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.meta-item {
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+}
+
+.meta-item strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+.site-footer {
+  margin-top: 32px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.callout {
+  border-left: 4px solid var(--accent);
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 16px;
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    width: min(calc(100% - 24px), var(--max-width));
+    padding-top: 18px;
+  }
+
+  .hero,
+  .card {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .grid.two-up {
+    grid-template-columns: 1fr;
+  }
+}
